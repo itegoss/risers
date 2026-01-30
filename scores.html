@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Risers – Live Scores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="assests/Fevicon.webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="logo" href="index.html" aria-label="Risers home">
+        <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="140" height="52" />
+      </a>
+      <button class="mobile-nav-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+        <span class="sr-only">Open navigation</span>
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <span class="nav-index" aria-hidden="true">01.</span>
+              <span class="nav-label">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">
+              <span class="nav-index" aria-hidden="true">02.</span>
+              <span class="nav-label">About Us</span>
+            </a>
+          </li>
+          <li class="nav-item nav-item-has-children">
+            <a href="#community" class="nav-link">
+              <span class="nav-index" aria-hidden="true">05.</span>
+              <span class="nav-label">Community</span>
+            </a>
+            <ul class="nav-submenu" aria-label="Community submenu">
+              <li><a href="#stories-of-rise">Stories of Rise</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="#volunteers">Volunteers &amp; Coaches</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button class="mobile-close" aria-label="Close navigation">
+        <span class="sr-only">Close navigation</span>
+        <span class="close-icon" aria-hidden="true"></span>
+      </button>
+      <ul class="mobile-links" role="menu">
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="index.html">
+            <span class="mobile-index" aria-hidden="true">01.</span>
+            <span class="mobile-label">Home</span>
+          </a>
+        </li>
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="#about">
+            <span class="mobile-index" aria-hidden="true">02.</span>
+            <span class="mobile-label">About Us</span>
+          </a>
+        </li>
+        
+        <li class="mobile-item mobile-item-has-children" role="none">
+          <a role="menuitem" href="#community">
+            <span class="mobile-index" aria-hidden="true">03.</span>
+            <span class="mobile-label">Community</span>
+          </a>
+          <ul class="mobile-submenu" role="menu">
+            <li role="none"><a role="menuitem" href="#stories-of-rise">Stories of Rise</a></li>
+            <li role="none"><a role="menuitem" href="gallery.html">Gallery</a></li>
+            <li role="none"><a role="menuitem" href="#volunteers">Volunteers &amp; Coaches</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Live scoreboard retained for relaunch
+  <main class="scores-main">
+    <div class="scores-ambient" aria-hidden="true"></div>
+
+    <section class="score-hero container">
+      <div class="score-hero-copy">
+        <span class="hero-pill">Live medal feed · refreshed every 60s</span>
+        <h1>State Medal Tally</h1>
+        <p>
+          Olympic-style scoreboard for RISERS tour stops. Tap into podium movement, medal surges,
+          and the stories behind every finish line.
+        </p>
+        <div class="footer-links">
+          <h4>Studios</h4>
+          <a href="#">Mumbai Control Room</a>
+          <a href="#">Ladakh Swim Camp</a>
+          <a href="#">Kutchi Ultra Lab</a>
+          <a href="#">Partner with us</a>
+        </div>
+        <div class="score-actions">
+          <a class="btn btn-primary" href="#podium">View current podium</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@therisers5251" target="_blank" rel="noopener noreferrer">Watch live highlights</a>
+        </div>
+      </div>
+      <div class="score-hero-panel">
+        <div class="score-metrics">
+          <article>
+            <span>Total medals logged</span>
+            <strong id="metricTotalMedals" data-count="0" data-format="comma">0</strong>
+          </article>
+          <article>
+            <span>Events decided</span>
+            <strong id="metricEvents" data-count="0">0</strong>
+          </article>
+          <article>
+            <span>States on board</span>
+            <strong id="metricStates" data-count="0">0</strong>
+            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
+              <circle cx="12" cy="12" r="3.2" />
+              <circle cx="16.8" cy="7.2" r="0.9" />
+            </svg>
+        </div>
+        <div class="score-ticker" aria-live="polite">
+          <div class="ticker-track" id="medalTicker"></div>
+            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18 5 12 5 12 5s-6 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8l4.8 3.2z" />
+            </svg>
+      </div>
+    </section>
+
+            <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M4.98 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM3 8.8h3.96V21H3zM9.75 8.8H13v1.7h.05a3.53 3.53 0 0 1 3.2-1.76c3.42 0 4.05 2.24 4.05 5.15V21h-3.96v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21H9.75z" />
+            </svg>
+      <article class="score-card podium-card" id="podium">
+        <div class="score-card-head">
+          <div>
+            <h2>Podium watch</h2>
+            <span>Gold rush standings</span>
+          </div>
+          <button class="btn btn-secondary" type="button" id="refreshPodium">Shuffle highlight</button>
+        </div>
+        <div class="podium" id="podiumTop3"></div>
+        <p class="podium-note" id="podiumNote">24 medals have changed hands today.</p>
+      </article>
+
+      <article class="score-card table-card">
+        <div class="score-card-head">
+          <div>
+            <h2>Medal table</h2>
+            <span>Olympic format · sorted by total</span>
+          </div>
+          <a class="link-pill" href="#" aria-label="Download scoreboard PDF">Download CSV</a>
+        </div>
+        <div class="scroll-x">
+          <table class="score-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>State</th>
+                <th>Gold</th>
+                <th>Silver</th>
+                <th>Bronze</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="scoreTableBody"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="score-card graph-card">
+        <div class="score-card-head">
+          <div>
+            <h2>Medals visualised</h2>
+            <span>Hover to compare depth</span>
+          </div>
+        </div>
+        <div class="bar-graph" id="barGraph"></div>
+      </article>
+
+      <article class="score-card updates-card">
+        <div class="score-card-head">
+          <div>
+            <h2>Control room feed</h2>
+            <span>Last 15 minutes</span>
+          </div>
+        </div>
+        <ul class="update-list">
+          <li>
+            <span class="update-badge gold">Gold boost</span>
+            <div>
+              <strong>Maharashtra</strong>
+              <p>4x400m relay adds +1 gold, pulling 3 medals clear of Delhi.</p>
+            </div>
+          </li>
+          <li>
+            <span class="update-badge silver">Silver swing</span>
+            <div>
+              <strong>Gujarat</strong>
+              <p>High-jump duo split a 1–2, bringing their silver tally to 7.</p>
+            </div>
+          </li>
+          <li>
+            <span class="update-badge bronze">Bronze lock</span>
+            <div>
+              <strong>Rajasthan</strong>
+              <p>Secures the beach wrestling bronze, edging past Karnataka.</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  -->
+
+  <main class="coming-main">
+    <div class="coming-glow" aria-hidden="true"></div>
+    <div class="container">
+      <section class="coming-card" aria-live="polite">
+        <p class="coming-eyebrow">Live Scores</p>
+        <h1>Scoreboard launching soon</h1>
+        <p class="coming-lede">
+          We’re polishing the Olympic-style leaderboard before unveiling it to the public.
+          Track events, podium swaps, and medal rushes will be back shortly.
+        </p>
+        <div class="coming-pill">Phase 1 roll-out · Q1 2026</div>
+        <div class="coming-actions">
+          <a class="btn btn-primary" href="index.html#events">Explore upcoming events</a>
+          <a class="btn btn-ghost" href="gallery.html">Watch recent highlights</a>
+        </div>
+        <div class="coming-note">
+          <p>Want first dibs when the feed goes live?</p>
+          <form class="coming-form">
+            <label class="sr-only" for="notifyEmail">Email address</label>
+            <input type="email" id="notifyEmail" placeholder="you@email.com" required />
+            <button type="submit" class="btn btn-secondary">Notify me</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-glow"></div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html" aria-label="Risers home">
+          <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="150" height="56" />
+        </a>
+        <p>
+          We design cinematic endurance stories — from sea-level night runs to snow-packed relay domes.
+        </p>
+        <span class="footer-tag">Since 2008 Committed To Fitness</span>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#events">Flagship Events</a>
+        <a href="scores.html">Live Scores</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#contact">Talk to us</a>
+      </div>
+
+
+
+
+      <div class="footer-cta">
+        <div class="footer-contact">
+          <a href="mailto:riserschembur@gmail.com">riserschembur@gmail.com</a>
+          <span>+91 98704 13141</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> RISERS</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/risers" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">Instagram</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
+            <circle cx="12" cy="12" r="3.2" />
+            <circle cx="16.8" cy="7.2" r="0.9" />
+          </svg>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">YouTube</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18 5 12 5 12 5s-6 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8l4.8 3.2z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">LinkedIn</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M4.98 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM3 8.8h3.96V21H3zM9.75 8.8H13v1.7h.05a3.53 3.53 0 0 1 3.2-1.76c3.42 0 4.05 2.24 4.05 5.15V21h-3.96v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21H9.75z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
