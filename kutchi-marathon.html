@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KVO Kutchi Marathon 2026 | Risers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="assests/Fevicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    .marathon-hero {
+      position: relative;
+      min-height: 75vh;
+      background: linear-gradient(135deg, #1f1f25 0%, #2d2d35 50%, #3a3a45 100%);
+      overflow: hidden;
+      padding: 10rem 0 5rem;
+    }
+    
+    .marathon-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 122, 0, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.12), transparent 45%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+      animation: runnerFlow 10s ease-in-out infinite;
+    }
+    
+    .marathon-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255, 122, 0, 0.03) 10px,
+          rgba(255, 122, 0, 0.03) 20px
+        );
+      animation: slidePattern 20s linear infinite;
+    }
+    
+    @keyframes slidePattern {
+      0% { transform: translateX(0) translateY(0); }
+      100% { transform: translateX(20px) translateY(20px); }
+    }
+    
+    @keyframes runnerFlow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-10px, -10px) scale(1.05); }
+    }
+    
+    .marathon-road {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,100 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"/><path d="M0,70 Q300,30 600,70 T1200,70 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x;
+      animation: roadMove 15s linear infinite;
+    }
+    
+    @keyframes roadMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1200px 0; }
+    }
+    
+    .marathon-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .badge-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    
+    .event-completed-badge {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      background: linear-gradient(135deg, #ff7a00 0%, #ff6b35 100%);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      box-shadow: 
+        0 10px 30px rgba(255, 122, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      animation: pulseGlow 3s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event-completed-badge::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+      );
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { 
+        box-shadow: 
+          0 10px 30px rgba(255, 122, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 0 30px rgba(255, 122, 0, 0.3);
+      }
+      50% { 
+        box-shadow: 
+          0 10px 40px rgba(255, 122, 0, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 0 50px rgba(255, 122, 0, 0.5);
+      }
+    }
+    
+    .marathon-badge {
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+    
+    .marathon-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin: 0 0 1rem;
+      font-weight: 700;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(135deg, #fff 0%, #ffddaa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .marathon-hero p {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+    
+    .event-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    
+    .stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 2rem 3rem;
+      min-width: 200px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 0.8s ease backwards;
+    }
+    
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 122, 0, 0.4);
+      box-shadow: 0 20px 50px rgba(255, 122, 0, 0.3);
+    }
+    
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 0%, #ff7a00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    
+    .event-info-section {
+      padding: 6rem 0;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(255, 122, 0, 0.25), transparent 55%),
+        radial-gradient(circle at 85% 0%, rgba(255, 231, 205, 0.55), transparent 60%),
+        #120c1f;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event-info-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 120px 120px;
+      opacity: 0.35;
+    }
+    
+    .event-info-section .section-head h2 {
+      background: linear-gradient(135deg, #fff 0%, #ff7a00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .event-info-section .section-head p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .bento-item {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 122, 0, 0.2);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .bento-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 122, 0, 0.15) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .bento-item:hover::before {
+      opacity: 1;
+    }
+    
+    .bento-item::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #ff7a00, #ff6b35, #ff8a3d);
+      border-radius: 24px;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+    
+    .bento-item:hover::after {
+      opacity: 0.3;
+      filter: blur(20px);
+    }
+    
+    .bento-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 122, 0, 0.5);
+      box-shadow: 0 25px 60px rgba(255, 122, 0, 0.3);
+    }
+    
+    .bento-large {
+      grid-column: span 8;
+    }
+    
+    .bento-medium {
+      grid-column: span 4;
+    }
+    
+    .bento-small {
+      grid-column: span 6;
+    }
+    
+    .bento-icon-area {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #ff7a00 0%, #ff6b35 100%);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .bento-icon-area::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      background: inherit;
+      border-radius: inherit;
+      opacity: 0.3;
+      filter: blur(12px);
+      z-index: -1;
+    }
+    
+    .bento-item:hover .bento-icon-area {
+      transform: rotate(10deg) scale(1.1);
+      box-shadow: 0 12px 35px rgba(255, 122, 0, 0.6);
+    }
+    
+    .bento-icon-area svg {
+      width: 34px;
+      height: 34px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .bento-content h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 0 0 1rem;
+    }
+    
+    .bento-content p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+    .bento-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(255, 122, 0, 0.2);
+      border: 1px solid rgba(255, 122, 0, 0.3);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ff7a00;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+    }
+    
+    .bento-stat {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .bento-stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ff7a00;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    
+    .bento-stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    @media (max-width: 968px) {
+      .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      
+      .bento-large,
+      .bento-medium,
+      .bento-small {
+        grid-column: span 6;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      
+      .bento-large,
+      .bento-medium,
+      .bento-small {
+        grid-column: span 1;
+      }
+      
+      .bento-item {
+        padding: 2rem;
+      }
+    }
+    
+    .event-gallery {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, #f8f9fc 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event-gallery::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(180deg, rgba(255, 122, 0, 0.03) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    
+    .event-gallery .section-head {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .gallery-carousel-wrapper {
+      position: relative;
+      margin-top: 3rem;
+      padding: 2rem 0;
+    }
+    
+    .gallery-carousel {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 1rem 0;
+      cursor: grab;
+    }
+    
+    .gallery-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .gallery-carousel:active {
+      cursor: grabbing;
+    }
+    
+    .gallery-slide {
+      flex: 0 0 auto;
+      width: 450px;
+      scroll-snap-align: center;
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 320px;
+    }
+    
+    .gallery-slide:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(255, 122, 0, 0.2);
+    }
+    
+    .gallery-slide-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+    
+    .gallery-slide-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .gallery-slide:hover .gallery-slide-image img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .gallery-nav-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid rgba(255, 122, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-nav-btn:hover {
+      background: #ff7a00;
+      border-color: #ff7a00;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 122, 0, 0.3);
+    }
+    
+    .gallery-nav-btn:hover svg {
+      stroke: #fff;
+    }
+    
+    .gallery-nav-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: #ff7a00;
+      stroke-width: 2.5;
+      transition: stroke 0.3s ease;
+    }
+    
+    .gallery-indicators {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0 1rem;
+    }
+    
+    .gallery-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 122, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-indicator.active {
+      width: 32px;
+      border-radius: 4px;
+      background: #ff7a00;
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-slide {
+        width: 320px;
+        height: 240px;
+      }
+      
+      .gallery-carousel {
+        gap: 1.5rem;
+      }
+    }
+    
+    .co-sponsors-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f5e6d3 0%, #ead5c1 100%);
+      text-align: center;
+      color: #1f1f25;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .co-sponsors-section::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 122, 0, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBackground 20s linear infinite;
+      opacity: 0.3;
+    }
+    
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+    
+    .co-sponsors-section h3 {
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      opacity: 0.9;
+      color: #1f1f25;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .co-sponsors-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .sponsor-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem 3.5rem;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(255, 122, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 122, 0, 0.1);
+    }
+    
+    .sponsor-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 122, 0, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .sponsor-card:hover::before {
+      left: 100%;
+    }
+    
+    .sponsor-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 30px 80px rgba(255, 122, 0, 0.15);
+    }
+    
+    .co-sponsor-logo {
+      max-width: 220px;
+      height: auto;
+      filter: none;
+      opacity: 1;
+      transition: transform 0.3s ease;
+    }
+    
+    .sponsor-card:hover .co-sponsor-logo {
+      transform: scale(1.1);
+    }
+    
+    .sponsor-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.4rem 1.2rem;
+      background: linear-gradient(135deg, #ff7a00, #ff6b35);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+    }
+    
+    .event-partners {
+      padding: 4rem 0;
+      background: #fff;
+      overflow: hidden;
+    }
+    
+    .partners-marquee-wrapper {
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 0;
+    }
+    
+    .partners-marquee-wrapper::before,
+    .partners-marquee-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    
+    .partners-marquee-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, #fff, transparent);
+    }
+    
+    .partners-marquee-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, #fff, transparent);
+    }
+    
+    .partners-scroll {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+      width: fit-content;
+    }
+    
+    .partners-marquee-wrapper:hover .partners-scroll {
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    .partner-logo {
+      min-width: 150px;
+      max-width: 150px;
+      height: 80px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .partner-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+      .event-stats {
+        gap: 1.5rem;
+      }
+      .stat-card {
+        padding: 1.2rem 1.8rem;
+        min-width: 150px;
+      }
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="logo" href="index.html" aria-label="Risers home">
+        <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="140" height="52" />
+      </a>
+      <button class="mobile-nav-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+        <span class="sr-only">Open navigation</span>
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="nav-index" aria-hidden="true">01.</span>
+              <span class="nav-label">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link">
+              <span class="nav-index" aria-hidden="true">02.</span>
+              <span class="nav-label">About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#events" class="nav-link active">
+              <span class="nav-index" aria-hidden="true">03.</span>
+              <span class="nav-label">Events</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link">
+              <span class="nav-index" aria-hidden="true">04.</span>
+              <span class="nav-label">Gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link">
+              <span class="nav-index" aria-hidden="true">05.</span>
+              <span class="nav-label">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button class="mobile-close" aria-label="Close navigation">
+        <span class="sr-only">Close navigation</span>
+        <span class="close-icon" aria-hidden="true"></span>
+      </button>
+      <ul class="mobile-links" role="menu">
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="index.html">
+            <span class="mobile-index" aria-hidden="true">01.</span>
+            <span class="mobile-label">Home</span>
+          </a>
+        </li>
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="index.html#about">
+            <span class="mobile-index" aria-hidden="true">02.</span>
+            <span class="mobile-label">About Us</span>
+          </a>
+        </li>
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="index.html#events">
+            <span class="mobile-index" aria-hidden="true">03.</span>
+            <span class="mobile-label">Events</span>
+          </a>
+        </li>
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="gallery.html">
+            <span class="mobile-index" aria-hidden="true">04.</span>
+            <span class="mobile-label">Gallery</span>
+          </a>
+        </li>
+        <li class="mobile-item" role="none">
+          <a role="menuitem" href="index.html#contact">
+            <span class="mobile-index" aria-hidden="true">05.</span>
+            <span class="mobile-label">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="marathon-hero">
+    <div class="marathon-road"></div>
+    <div class="container marathon-content">
+      <div class="badge-container">
+        <span class="event-completed-badge">✓ EVENT SUCCESSFULLY COMPLETED</span>
+        <span class="marathon-badge">🏃‍♂️ Marathon • 2026</span>
+      </div>
+      <h1>KVO Kutchi Marathon</h1>
+      <p>A unique marathon experience designed to challenge your stamina and bring runners together across Mumbai's scenic routes.</p>
+      
+      <div class="event-stats">
+        <div class="stat-card">
+          <span class="stat-number">4500+</span>
+          <span class="stat-label">Participants</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">21</span>
+          <span class="stat-label">KM Max</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT INFO SECTION -->
+  <section class="event-info-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Marathon Details</h2>
+        <p>Everything you need to know about the KVO Kutchi Marathon 2026</p>
+      </div>
+      
+      <div class="bento-grid">
+        <div class="bento-item bento-large">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>Starting Point & Route</h3>
+            <p>Diamond Garden, Chembur with scenic routes through Mumbai. Easy to reach with ample parking available. Professional route markers and hydration stations every 2.5 km.</p>
+            <span class="bento-badge">Prime Location</span>
+          </div>
+        </div>
+        
+        <div class="bento-item bento-medium">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>Race Day</h3>
+            <p>February 1, 2026</p>
+            <div class="bento-stat">
+              <span class="bento-stat-value">5:00</span>
+              <span class="bento-stat-label">AM Flag Off</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bento-item bento-small">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>Electronic Timing</h3>
+            <p>Professional chip-based timing system for accurate results in 5K, 10K & 21K categories</p>
+          </div>
+        </div>
+        
+        <div class="bento-item bento-small">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>Safety & Support</h3>
+            <p>Medical support teams, hydration stations, and professional marshals throughout the entire route</p>
+          </div>
+        </div>
+        
+        <div class="bento-item bento-medium">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>For Everyone</h3>
+            <p>Open to KVO Jain community worldwide</p>
+            <div class="bento-stat">
+              <span class="bento-stat-value">6</span>
+              <span class="bento-stat-label">Categories</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bento-item bento-large">
+          <div class="bento-icon-area">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="7"/>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+            </svg>
+          </div>
+          <div class="bento-content">
+            <h3>Finisher Benefits</h3>
+            <p>Medals, certificates, T-shirts, refreshments for all participants. Special prizes for top 3 finishers in each category. Professional photography and timing certificates available.</p>
+            <span class="bento-badge">Finisher Rewards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT GALLERY -->
+  <section class="event-gallery">
+    <div class="container">
+      <div class="section-head">
+        <h2>Marathon Moments</h2>
+        <p>Relive the energy and excitement</p>
+      </div>
+      
+      <div class="gallery-carousel-wrapper">
+        <div class="gallery-carousel" id="galleryCarousel">
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/marathon.webp" alt="Marathon race" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/group.webp" alt="Community gathering" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/past.webp" alt="Past marathon event" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/marathon.webp" alt="Runners in action" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/group.webp" alt="Team celebration" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/past.webp" alt="Victory moments" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/marathon.webp" alt="Finish line" loading="lazy" />
+            </div>
+          </div>
+          
+          <div class="gallery-slide">
+            <div class="gallery-slide-image">
+              <img src="assests/group.webp" alt="Award ceremony" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-nav">
+          <button class="gallery-nav-btn" id="galleryPrev" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          
+          <div class="gallery-indicators" id="galleryIndicators"></div>
+          
+          <button class="gallery-nav-btn" id="galleryNext" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CO-SPONSORS SECTION -->
+  <section class="co-sponsors-section">
+    <div class="container">
+      <h3>Co-Sponsors</h3>
+      <div class="co-sponsors-grid">
+        <div class="sponsor-card">
+          <img src="assests/ramdev.webp" alt="Ramdev - Co-sponsor" class="co-sponsor-logo" />
+          <div class="sponsor-badge">Co-Sponsor</div>
+        </div>
+        <div class="sponsor-card">
+          <img src="assests/justintime.webp" alt="Just In Time - Co-sponsor" class="co-sponsor-logo" />
+          <div class="sponsor-badge">Co-Sponsor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT PARTNERS -->
+  <section class="event-partners">
+    <div class="container">
+      <div class="section-head">
+        <h2>Event Partners</h2>
+        <p>Supported by leading brands</p>
+      </div>
+      
+      <div class="partners-marquee-wrapper">
+        <div class="partners-scroll">
+          <img src="assests/sponser1.webp" alt="Partner 1" class="partner-logo" />
+          <img src="assests/sponser2.webp" alt="Partner 2" class="partner-logo" />
+          <img src="assests/sponser3.webp" alt="Partner 3" class="partner-logo" />
+          <img src="assests/sponser4.webp" alt="Partner 4" class="partner-logo" />
+          <img src="assests/sponser5.webp" alt="Partner 5" class="partner-logo" />
+          <img src="assests/sponser6.webp" alt="Partner 6" class="partner-logo" />
+          <img src="assests/sponser7.webp" alt="Partner 7" class="partner-logo" />
+          <img src="assests/sponser8.webp" alt="Partner 8" class="partner-logo" />
+          <img src="assests/sponser9.webp" alt="Partner 9" class="partner-logo" />
+          <img src="assests/sponser10.webp" alt="Partner 10" class="partner-logo" />
+          
+          <!-- Duplicate for seamless loop -->
+          <img src="assests/sponser1.webp" alt="Partner 1" class="partner-logo" />
+          <img src="assests/sponser2.webp" alt="Partner 2" class="partner-logo" />
+          <img src="assests/sponser3.webp" alt="Partner 3" class="partner-logo" />
+          <img src="assests/sponser4.webp" alt="Partner 4" class="partner-logo" />
+          <img src="assests/sponser5.webp" alt="Partner 5" class="partner-logo" />
+          <img src="assests/sponser6.webp" alt="Partner 6" class="partner-logo" />
+          <img src="assests/sponser7.webp" alt="Partner 7" class="partner-logo" />
+          <img src="assests/sponser8.webp" alt="Partner 8" class="partner-logo" />
+          <img src="assests/sponser9.webp" alt="Partner 9" class="partner-logo" />
+          <img src="assests/sponser10.webp" alt="Partner 10" class="partner-logo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-glow"></div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html" aria-label="Risers home">
+          <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="150" height="56" />
+        </a>
+        <p>
+          We design cinematic endurance stories — from sea-level night runs to snow-packed relay domes.
+        </p>
+        <span class="footer-tag">Since 2008 Committed To Fitness</span>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#events">Flagship Events</a>
+        <a href="scores.html">Live Scores</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#contact">Talk to us</a>
+      </div>
+
+
+
+
+      <div class="footer-cta">
+        <div class="footer-contact">
+          <a href="mailto:riserschembur@gmail.com">riserschembur@gmail.com</a>
+          <span>+91 98704 13141</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> RISERS</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/risers" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">Instagram</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
+            <circle cx="12" cy="12" r="3.2" />
+            <circle cx="16.8" cy="7.2" r="0.9" />
+          </svg>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">YouTube</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18 5 12 5 12 5s-6 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8l4.8 3.2z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <span class="sr-only">LinkedIn</span>
+          <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M4.98 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM3 8.8h3.96V21H3zM9.75 8.8H13v1.7h.05a3.53 3.53 0 0 1 3.2-1.76c3.42 0 4.05 2.24 4.05 5.15V21h-3.96v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21H9.75z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    // Gallery Carousel with Infinite Loop
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('galleryCarousel');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+      const indicatorsContainer = document.getElementById('galleryIndicators');
+      
+      if (!carousel || !prevBtn || !nextBtn) return;
+      
+      const originalSlides = Array.from(carousel.querySelectorAll('.gallery-slide'));
+      const totalSlides = originalSlides.length;
+      
+      // Clone slides for infinite loop
+      originalSlides.forEach(slide => {
+        const cloneStart = slide.cloneNode(true);
+        const cloneEnd = slide.cloneNode(true);
+        carousel.appendChild(cloneEnd);
+        carousel.insertBefore(cloneStart, carousel.firstChild);
+      });
+      
+      const allSlides = carousel.querySelectorAll('.gallery-slide');
+      const slideWidth = allSlides[0]?.offsetWidth || 450;
+      const gap = 32;
+      
+      // Set initial position to first real slide
+      carousel.scrollLeft = totalSlides * (slideWidth + gap);
+      
+      // Create indicators
+      originalSlides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('gallery-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => scrollToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+      });
+      
+      const indicators = indicatorsContainer.querySelectorAll('.gallery-indicator');
+      
+      // Update active indicator
+      function updateActiveIndicator() {
+        const scrollLeft = carousel.scrollLeft;
+        const actualIndex = Math.round(scrollLeft / (slideWidth + gap)) - totalSlides;
+        const indicatorIndex = ((actualIndex % totalSlides) + totalSlides) % totalSlides;
+        indicators.forEach((ind, idx) => {
+          ind.classList.toggle('active', idx === indicatorIndex);
+        });
+      }
+      
+      // Scroll to specific slide
+      function scrollToSlide(index) {
+        const targetScroll = (totalSlides + index) * (slideWidth + gap);
+        carousel.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Handle infinite loop
+      function handleInfiniteScroll() {
+        const scrollLeft = carousel.scrollLeft;
+        const maxScroll = allSlides.length * (slideWidth + gap);
+        
+        if (scrollLeft <= 0) {
+          carousel.scrollLeft = totalSlides * (slideWidth + gap);
+        } else if (scrollLeft >= maxScroll - carousel.offsetWidth) {
+          carousel.scrollLeft = totalSlides * (slideWidth + gap);
+        }
+      }
+      
+      // Navigation buttons
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: -(slideWidth + gap),
+          behavior: 'smooth'
+        });
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+          left: slideWidth + gap,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Auto-play carousel
+      let autoPlayInterval = setInterval(() => {
+        carousel.scrollBy({
+          left: slideWidth + gap,
+          behavior: 'smooth'
+        });
+      }, 3000);
+      
+      // Pause auto-play on hover
+      carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+      });
+      
+      carousel.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(() => {
+          carousel.scrollBy({
+            left: slideWidth + gap,
+            behavior: 'smooth'
+          });
+        }, 3000);
+      });
+      
+      // Update indicator on scroll
+      carousel.addEventListener('scroll', () => {
+        updateActiveIndicator();
+        clearTimeout(carousel.scrollTimeout);
+        carousel.scrollTimeout = setTimeout(handleInfiniteScroll, 150);
+      });
+      
+      // Touch/drag scroll support
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        clearInterval(autoPlayInterval);
+      });
+      
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+      });
+      
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+        autoPlayInterval = setInterval(() => {
+          carousel.scrollBy({
+            left: slideWidth + gap,
+            behavior: 'smooth'
+          });
+        }, 3000);
+      });
+      
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          clearInterval(autoPlayInterval);
+          prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+          clearInterval(autoPlayInterval);
+          nextBtn.click();
+        }
+      });
+    });
+  </script>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+</body>
+</html>

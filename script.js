@@ -1090,122 +1090,147 @@ function initPodiumRefresh(rows) {
 // GALLERY FOLDERS + FILTERS + FULLSCREEN IMAGE
 
 const folderLibrary = {
+  "athletic-event": [
+    { type: "image", src: "assests/gallery/athletic event/1.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/2.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/3.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/4.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/5.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/6.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/7.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/8.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/9.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/10.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/11.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/12.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/13.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/14.JPG", label: "Athletic Event" },
+    { type: "image", src: "assests/gallery/athletic event/15.JPG", label: "Athletic Event" },
+  ],
+  "kutchi-marathon": [
+    { type: "image", src: "assests/gallery/marathon/1.CR3", label: "Kutchi Marathon" },
+    { type: "image", src: "assests/gallery/marathon/2.CR3", label: "Kutchi Marathon" },
+    { type: "image", src: "assests/gallery/marathon/3.CR3", label: "Kutchi Marathon" },
+    { type: "image", src: "assests/gallery/marathon/4.CR3", label: "Kutchi Marathon" },
+    { type: "image", src: "assests/gallery/marathon/5.CR3", label: "Kutchi Marathon" },
+    { type: "image", src: "assests/gallery/marathon/6.CR3", label: "Kutchi Marathon" },
+  ],
   "swimming-event":[
-    { type: "image", src: "assets/gallery/swimming event/1.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/2.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/3.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/4.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/5.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/6.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/7.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/8.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/9.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/10.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/11.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/12.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/13.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/14.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/15.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/16.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/17.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/18.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/19.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/20.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/21.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/22.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/23.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/24.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/25.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/26.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/27.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/28.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/29.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/30.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/31.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/32.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/33.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/34.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/35.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/36.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/37.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/38.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/39.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/40.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/41.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/42.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/43.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/44.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/45.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/46.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/47.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/48.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/49.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/50.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/51.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/52.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/53.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/54.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/55.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/56.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/57.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/58.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/59.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/60.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/61.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/62.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/63.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/64.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/65.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/66.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/67.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/68.webp", label: "Swimming Event" },
-    { type: "image", src: "assets/gallery/swimming event/69.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/1.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/2.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/3.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/4.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/5.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/6.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/7.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/8.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/9.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/10.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/11.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/12.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/13.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/14.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/15.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/16.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/17.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/18.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/19.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/20.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/21.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/22.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/23.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/24.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/25.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/26.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/27.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/28.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/29.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/30.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/31.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/32.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/33.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/34.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/35.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/36.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/37.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/38.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/39.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/40.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/41.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/42.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/43.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/44.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/45.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/46.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/47.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/48.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/49.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/50.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/51.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/52.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/53.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/54.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/55.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/56.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/57.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/58.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/59.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/60.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/61.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/62.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/63.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/64.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/65.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/66.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/67.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/68.webp", label: "Swimming Event" },
+    { type: "image", src: "assests/gallery/swimming event/69.webp", label: "Swimming Event" },
   ],
   "Training": [
-    { type: "video", src: "assets/training/1.webm", label: "Training Practice" },
-    { type: "video", src: "assets/training/2.mp4", label: "Training Practice" },
-    { type: "video", src: "assets/training/3.webm", label: "Training Practice" },
-    { type: "video", src: "assets/training/4.webm", label: "Training Practice" },
-    { type: "video", src: "assets/training/5.webm", label: "Training Practice" },
-    { type: "video", src: "assets/training/6.mp4", label: "Training Practice" },
+    { type: "video", src: "assests/training/1.webm", label: "Training Practice" },
+    { type: "video", src: "assests/training/2.mp4", label: "Training Practice" },
+    { type: "video", src: "assests/training/3.webm", label: "Training Practice" },
+    { type: "video", src: "assests/training/4.webm", label: "Training Practice" },
+    { type: "video", src: "assests/training/5.webm", label: "Training Practice" },
+    { type: "video", src: "assests/training/6.mp4", label: "Training Practice" },
   ],
   "logo-reveal": [
-    { type: "image", src: "assets/gallery/logo reveal/1.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/2.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/3.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/4.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/5.webp", label: "Logo Reveal" }, 
-    { type: "image", src: "assets/gallery/logo reveal/6.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/7.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/8.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/9.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/10.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/11.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/12.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/13.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/14.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/15.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/16.webp", label: "Logo Reveal" },
-    { type: "image", src: "assets/gallery/logo reveal/17.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/1.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/2.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/3.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/4.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/5.webp", label: "Logo Reveal" }, 
+    { type: "image", src: "assests/gallery/logo reveal/6.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/7.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/8.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/9.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/10.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/11.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/12.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/13.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/14.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/15.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/16.webp", label: "Logo Reveal" },
+    { type: "image", src: "assests/gallery/logo reveal/17.webp", label: "Logo Reveal" },
   ],
   "old-memories": [
-    { type: "image", src: "assets/gallery/old memories/1.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/2.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/4.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/5.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/7.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/9.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/11.webp", label: "Old memories", text: "" },   
-    { type: "image", src: "assets/gallery/old memories/13.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/14.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assets/gallery/old memories/15.webp", label: "Old memories", text: "" }, 
-    { type: "image", src: "assets/gallery/old memories/16.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/18.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/19.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/21.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/22.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/24.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assets/gallery/old memories/25.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/1.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/2.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/4.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/5.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/7.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/9.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/11.webp", label: "Old memories", text: "" },   
+    { type: "image", src: "assests/gallery/old memories/13.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/14.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/15.webp", label: "Old memories", text: "" }, 
+    { type: "image", src: "assests/gallery/old memories/16.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/18.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/19.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/21.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/22.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/24.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/25.webp", label: "Old memories", text: " "},
 
   ],
   
@@ -1757,3 +1782,90 @@ function initCursor() {
   });
 }
 
+// MARATHON ROUTE CARD
+document.addEventListener('DOMContentLoaded', function() {
+  const routeButtons = document.querySelectorAll('.route-btn');
+  const routeModal = document.getElementById('routeModal');
+  const routeImage = document.getElementById('routeImage');
+  const routeClose = document.getElementById('routeClose');
+  
+  if (!routeButtons.length || !routeModal || !routeImage || !routeClose) {
+    console.log('Marathon route elements not found');
+    return;
+  }
+  
+  // Image paths
+  const routeImages = {
+    '1': 'assests/1km.png',
+    '5': 'assests/5km.png',
+    '10': 'assests/10km.png',
+    '21': 'assests/21km.png'
+  };
+  
+
+  
+  // Button click handler
+  routeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const km = this.getAttribute('data-km');
+      let imagePath = routeImages[km];
+      
+      console.log(`Button clicked: ${km}km`);
+      
+      // Disable all buttons
+      routeButtons.forEach(btn => btn.classList.add('disabled'));
+      
+      // Set image
+      routeImage.src = imagePath;
+      routeImage.alt = `${km}km Marathon Route`;
+      
+      // Error handler - try fallback image
+      routeImage.onerror = function() {
+        console.log(`Primary image failed, trying fallback for ${km}km`);
+        const fallback = testImages[km];
+        if (fallback && routeImage.src.indexOf(fallback) === -1) {
+          routeImage.src = fallback;
+        } else {
+          alert(`Images not found!\n\nAdd these files to 'assests' folder:\n- 1km.png\n- 5km.png\n- 10km.png\n- 21km.png`);
+          closeModal();
+        }
+      };
+      
+      // Success handler
+      routeImage.onload = function() {
+        console.log('Image loaded successfully');
+        setTimeout(() => {
+          routeModal.classList.add('active');
+        }, 50);
+      };
+    });
+  });
+  
+  // Close modal function
+  function closeModal() {
+    routeModal.classList.remove('active');
+    setTimeout(() => {
+      routeButtons.forEach(btn => btn.classList.remove('disabled'));
+      routeImage.src = '';
+    }, 400);
+  }
+  
+  // Close button click
+  routeClose.addEventListener('click', closeModal);
+  
+  // Click outside to close
+  routeModal.addEventListener('click', function(e) {
+    if (e.target === routeModal) {
+      closeModal();
+    }
+  });
+  
+  // ESC key to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && routeModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+  
+  console.log('Marathon route card initialized ✓');
+});
