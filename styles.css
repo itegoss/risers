@@ -387,8 +387,9 @@ section {
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 0.45rem);
+  top: 100%;
   left: 0;
+  margin-top: 0.45rem;
   transform: translateY(8px);
   min-width: 220px;
   padding: 0.65rem;
@@ -404,6 +405,15 @@ section {
   pointer-events: none;
   transition: opacity var(--transition-fast), transform var(--transition-fast);
   z-index: 50;
+}
+
+.nav-submenu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.55rem;
+  height: 0.55rem;
 }
 
 .nav-item-has-children:hover .nav-submenu,
