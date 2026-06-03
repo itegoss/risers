@@ -1235,8 +1235,6 @@ const folderLibrary = {
   ],
   "base-camp": [
     { type: "image", src: "assests/gallery/Base Camp/1.jpeg", label: "Base camp", text: "" },
-    { type: "image", src: "assests/gallery/Base Camp/2.jpeg", label: "Base camp", text: "" },
-    { type: "image", src: "assests/gallery/Base Camp/3.jpeg", label: "Base camp", text: "" },
     { type: "image", src: "assests/gallery/Base Camp/4.jpeg", label: "Base camp", text: "" },
     { type: "image", src: "assests/gallery/Base Camp/5.jpeg", label: "Base camp", text: "" },
     { type: "image", src: "assests/gallery/Base Camp/6.jpeg", label: "Base camp", text: "" },
@@ -1275,8 +1273,7 @@ function initFolderModal() {
   const backdrop = modal.querySelector(".folder-backdrop");
   const dialog = modal.querySelector(".folder-dialog");
   const closeBtn = modal.querySelector(".folder-close");
-  const img = modal.querySelector(".folder-media-img");
-  const vid = modal.querySelector(".folder-media-video");
+  const stage = modal.querySelector(".folder-stage");
   const chip = modal.querySelector(".folder-chip");
   const text = modal.querySelector(".folder-text");
   const counter = modal.querySelector(".folder-counter");
@@ -1285,32 +1282,80 @@ function initFolderModal() {
 
   let activeFolder = null;
   let index = 0;
+  let autoplayInterval = null;
 
-  const resetMedia = () => {
-    [img, vid].forEach((el) => {
-      el.classList.remove("is-active");
-      if (el.tagName === "VIDEO") {
-        el.pause();
-        el.removeAttribute("src");
-        el.load();
+  const autoplayCheckbox = document.getElementById("autoplayCheckbox");
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    if (autoplayCheckbox && autoplayCheckbox.checked) {
+      autoplayInterval = setInterval(() => step(1), 3000);
+    }
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+      autoplayInterval = null;
+    }
+  };
+
+  if (autoplayCheckbox) {
+    autoplayCheckbox.addEventListener("change", () => {
+      if (autoplayCheckbox.checked && modal.getAttribute("aria-hidden") === "false") {
+        startAutoplay();
+      } else {
+        stopAutoplay();
       }
     });
-  };
+  }
 
   const render = () => {
     if (!activeFolder || !folderLibrary[activeFolder]) return;
     const items = folderLibrary[activeFolder];
     const item = items[index];
-    resetMedia();
 
-    if (item.type === "video") {
-      vid.src = item.src;
-      vid.classList.add("is-active");
-      vid.play().catch(() => {});
-    } else {
-      img.src = item.src;
-      img.alt = item.text || "Event media";
-      img.classList.add("is-active");
+    // Build stage if empty
+    if (stage.children.length === 0) {
+      items.forEach((itm, i) => {
+        const slide = document.createElement("div");
+        slide.className = "folder-slide";
+        if (itm.type === "video") {
+          const v = document.createElement("video");
+          v.src = itm.src;
+          v.controls = true;
+          v.playsInline = true;
+          v.className = "folder-media";
+          slide.appendChild(v);
+        } else {
+          const im = document.createElement("img");
+          im.src = itm.src;
+          im.alt = itm.text || "Event media";
+          im.className = "folder-media";
+          slide.appendChild(im);
+        }
+        stage.appendChild(slide);
+      });
+    }
+
+    // Update active slide
+    const slides = stage.querySelectorAll(".folder-slide");
+    slides.forEach((s, i) => {
+      if (i === index) {
+        s.classList.add("active");
+        const vid = s.querySelector("video");
+        if (vid) vid.play().catch(()=>{});
+      } else {
+        s.classList.remove("active");
+        const vid = s.querySelector("video");
+        if (vid) vid.pause();
+      }
+    });
+
+    // Scroll stage to center the active slide
+    const activeSlide = slides[index];
+    if (activeSlide) {
+      activeSlide.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
 
     chip.textContent = item.label || "";
@@ -1318,19 +1363,27 @@ function initFolderModal() {
     counter.textContent = `${index + 1} / ${items.length}`;
   };
 
+  const resetMedia = () => {
+    const vids = stage.querySelectorAll("video");
+    vids.forEach(v => v.pause());
+  };
+
   const open = (folderId) => {
     if (!folderLibrary[folderId]) return;
     activeFolder = folderId;
     index = 0;
+    stage.innerHTML = ""; // rebuild for new folder
     render();
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    startAutoplay();
   };
 
   const close = () => {
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     resetMedia();
+    stopAutoplay();
   };
 
   const step = (delta) => {
@@ -1338,6 +1391,9 @@ function initFolderModal() {
     const items = folderLibrary[activeFolder];
     index = (index + delta + items.length) % items.length;
     render();
+    if (modal.getAttribute("aria-hidden") === "false") {
+      startAutoplay();
+    }
   };
 
   [closeBtn, backdrop].forEach((el) => el && el.addEventListener("click", close));
