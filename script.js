@@ -26,7 +26,7 @@ document.querySelectorAll("#year").forEach((el) => {
         const wrapper = document.getElementById("heroCountdown");
         if (wrapper) {
           const label = wrapper.querySelector(".countdown-footer span") ||
-                        wrapper.querySelector("div:last-child span");
+            wrapper.querySelector("div:last-child span");
           if (label) label.textContent = "⏱ Registrations are now closed!";
         }
         return;
@@ -645,7 +645,7 @@ const INSTAGRAM_POSTS = [
     ago: "1 day ago",
     location: "Mumbai, India",
     link: "https://www.instagram.com/reel/DRj_RKFE_Ae/?igsh=NTM2NnZ2azQ1aDFy",
-    
+
   },
   {
     id: "salt-run",
@@ -785,8 +785,8 @@ function initInfoModal() {
       const tables = section.tables?.length
         ? section.tables
         : section.table
-        ? [section.table]
-        : [];
+          ? [section.table]
+          : [];
 
       tables.forEach((tableDef) => {
         if (!tableDef?.rows?.length) return;
@@ -850,8 +850,8 @@ function initInfoModal() {
       const lists = section.lists?.length
         ? section.lists
         : section.listItems?.length
-        ? [{ title: section.listTitle, items: section.listItems }]
-        : [];
+          ? [{ title: section.listTitle, items: section.listItems }]
+          : [];
 
       lists.forEach((listBlock) => {
         if (!listBlock?.items?.length) return;
@@ -1166,7 +1166,7 @@ const folderLibrary = {
     { type: "image", src: "assests/gallery/marathon/5.jpg", label: "Kutchi Marathon" },
     { type: "image", src: "assests/gallery/marathon/6.jpg", label: "Kutchi Marathon" },
   ],
-  "swimming-event":[
+  "swimming-event": [
     { type: "image", src: "assests/gallery/swimming event/1.webp", label: "Swimming Event" },
     { type: "image", src: "assests/gallery/swimming event/2.webp", label: "Swimming Event" },
     { type: "image", src: "assests/gallery/swimming event/3.webp", label: "Swimming Event" },
@@ -1250,7 +1250,7 @@ const folderLibrary = {
     { type: "image", src: "assests/gallery/logo reveal/2.webp", label: "Logo Reveal" },
     { type: "image", src: "assests/gallery/logo reveal/3.webp", label: "Logo Reveal" },
     { type: "image", src: "assests/gallery/logo reveal/4.webp", label: "Logo Reveal" },
-    { type: "image", src: "assests/gallery/logo reveal/5.webp", label: "Logo Reveal" }, 
+    { type: "image", src: "assests/gallery/logo reveal/5.webp", label: "Logo Reveal" },
     { type: "image", src: "assests/gallery/logo reveal/6.webp", label: "Logo Reveal" },
     { type: "image", src: "assests/gallery/logo reveal/7.webp", label: "Logo Reveal" },
     { type: "image", src: "assests/gallery/logo reveal/8.webp", label: "Logo Reveal" },
@@ -1271,17 +1271,17 @@ const folderLibrary = {
     { type: "image", src: "assests/gallery/old memories/5.webp", label: "Old memories", text: "" },
     { type: "image", src: "assests/gallery/old memories/7.webp", label: "Old memories", text: "" },
     { type: "image", src: "assests/gallery/old memories/9.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assests/gallery/old memories/11.webp", label: "Old memories", text: "" },   
+    { type: "image", src: "assests/gallery/old memories/11.webp", label: "Old memories", text: "" },
     { type: "image", src: "assests/gallery/old memories/13.webp", label: "Old memories", text: "" },
     { type: "image", src: "assests/gallery/old memories/14.webp", label: "Old memories", text: "" },
-    { type: "image", src: "assests/gallery/old memories/15.webp", label: "Old memories", text: "" }, 
-    { type: "image", src: "assests/gallery/old memories/16.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/18.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/19.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/21.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/22.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/24.webp", label: "Old memories", text: " "},
-    { type: "image", src: "assests/gallery/old memories/25.webp", label: "Old memories", text: " "},
+    { type: "image", src: "assests/gallery/old memories/15.webp", label: "Old memories", text: "" },
+    { type: "image", src: "assests/gallery/old memories/16.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/18.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/19.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/21.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/22.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/24.webp", label: "Old memories", text: " " },
+    { type: "image", src: "assests/gallery/old memories/25.webp", label: "Old memories", text: " " },
 
   ],
   "base-camp": [
@@ -1312,9 +1312,9 @@ const folderLibrary = {
     { type: "video", src: "assests/gallery/Base Camp/27.mp4", label: "Base camp", text: "" },
     { type: "video", src: "assests/gallery/Base Camp/28.mp4", label: "Base camp", text: "" },
     { type: "video", src: "assests/gallery/Base Camp/29.mp4", label: "Base camp", text: "" },
-  
+
   ],
-  
+
 };
 
 function initFolderModal() {
@@ -1395,7 +1395,7 @@ function initFolderModal() {
       if (i === index) {
         s.classList.add("active");
         const vid = s.querySelector("video");
-        if (vid) vid.play().catch(()=>{});
+        if (vid) vid.play().catch(() => { });
       } else {
         s.classList.remove("active");
         const vid = s.querySelector("video");
@@ -1679,8 +1679,8 @@ function initInstagramFeed() {
       post.type === "reel"
         ? "Reel"
         : post.type === "carousel"
-        ? "Carousel"
-        : "Post";
+          ? "Carousel"
+          : "Post";
 
     const hashtags = (post.hashtags || []).join(" ");
 
@@ -1698,11 +1698,10 @@ function initInstagramFeed() {
       <div class="insta-media">
         <img src="${post.media}" alt="${post.alt}" loading="lazy" />
         <span class="insta-chip">${chipLabel}</span>
-        ${
-          post.isLive
-            ? '<span class="insta-live-dot"><span class="dot"></span>Live Now</span>'
-            : ""
-        }
+        ${post.isLive
+        ? '<span class="insta-live-dot"><span class="dot"></span>Live Now</span>'
+        : ""
+      }
       </div>
       <div class="insta-body">
         <p class="insta-caption">${post.caption}</p>
@@ -1847,16 +1846,16 @@ function initNav() {
   if (toggle && menu) {
     function openMenu() {
       menu.classList.add('active');
-      toggle.setAttribute('aria-expanded','true');
-      menu.setAttribute('aria-hidden','false');
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       const firstLink = menu.querySelector('a');
       if (firstLink) firstLink.focus();
     }
     function closeMenu() {
       menu.classList.remove('active');
-      toggle.setAttribute('aria-expanded','false');
-      menu.setAttribute('aria-hidden','true');
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       toggle.focus();
     }
@@ -1922,17 +1921,17 @@ function initCursor() {
 }
 
 // MARATHON ROUTE CARD
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const routeButtons = document.querySelectorAll('.route-btn');
   const routeModal = document.getElementById('routeModal');
   const routeImage = document.getElementById('routeImage');
   const routeClose = document.getElementById('routeClose');
-  
+
   if (!routeButtons.length || !routeModal || !routeImage || !routeClose) {
     console.log('Marathon route elements not found');
     return;
   }
-  
+
   // Image paths
   const routeImages = {
     '1': 'assests/1km.png',
@@ -1940,26 +1939,26 @@ document.addEventListener('DOMContentLoaded', function() {
     '10': 'assests/10km.png',
     '21': 'assests/21km.png'
   };
-  
 
-  
+
+
   // Button click handler
   routeButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       const km = this.getAttribute('data-km');
       let imagePath = routeImages[km];
-      
+
       console.log(`Button clicked: ${km}km`);
-      
+
       // Disable all buttons
       routeButtons.forEach(btn => btn.classList.add('disabled'));
-      
+
       // Set image
       routeImage.src = imagePath;
       routeImage.alt = `${km}km Marathon Route`;
-      
+
       // Error handler - try fallback image
-      routeImage.onerror = function() {
+      routeImage.onerror = function () {
         console.log(`Primary image failed, trying fallback for ${km}km`);
         const fallback = testImages[km];
         if (fallback && routeImage.src.indexOf(fallback) === -1) {
@@ -1969,9 +1968,9 @@ document.addEventListener('DOMContentLoaded', function() {
           closeModal();
         }
       };
-      
+
       // Success handler
-      routeImage.onload = function() {
+      routeImage.onload = function () {
         console.log('Image loaded successfully');
         setTimeout(() => {
           routeModal.classList.add('active');
@@ -1979,7 +1978,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     });
   });
-  
+
   // Close modal function
   function closeModal() {
     routeModal.classList.remove('active');
@@ -1988,23 +1987,23 @@ document.addEventListener('DOMContentLoaded', function() {
       routeImage.src = '';
     }, 400);
   }
-  
+
   // Close button click
   routeClose.addEventListener('click', closeModal);
-  
+
   // Click outside to close
-  routeModal.addEventListener('click', function(e) {
+  routeModal.addEventListener('click', function (e) {
     if (e.target === routeModal) {
       closeModal();
     }
   });
-  
+
   // ESC key to close
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && routeModal.classList.contains('active')) {
       closeModal();
     }
   });
-  
+
   console.log('Marathon route card initialized ✓');
 });
