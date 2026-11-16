@@ -3,6 +3,57 @@ document.querySelectorAll("#year").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+// HERO REGISTRATION COUNTDOWN TIMER
+(function initHeroCountdown() {
+  function start() {
+    const daysEl = document.getElementById("countDays");
+    const hoursEl = document.getElementById("countHours");
+    const minsEl = document.getElementById("countMins");
+    const secsEl = document.getElementById("countSecs");
+    if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+    const regDeadline = new Date("2026-11-30T23:59:59+05:30").getTime();
+
+    function tick() {
+      const now = Date.now();
+      const diff = regDeadline - now;
+
+      if (diff <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minsEl.textContent = "00";
+        secsEl.textContent = "00";
+        const wrapper = document.getElementById("heroCountdown");
+        if (wrapper) {
+          const label = wrapper.querySelector(".countdown-footer span") ||
+                        wrapper.querySelector("div:last-child span");
+          if (label) label.textContent = "⏱ Registrations are now closed!";
+        }
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(d).padStart(2, "0");
+      hoursEl.textContent = String(h).padStart(2, "0");
+      minsEl.textContent = String(m).padStart(2, "0");
+      secsEl.textContent = String(s).padStart(2, "0");
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+
 // COUNTDOWN TIMERS
 function initCountdowns() {
   const cds = document.querySelectorAll(".countdown");
@@ -527,10 +578,10 @@ const INFO_CONTENT = {
     ],
   },
   marathon: {
-    title: "Kutchi Marathon Playbook",
+    title: "Antra Kutchi Marathon Playbook",
     tag: "Marathon Brief",
     description:
-      "Everything you need to know about eligibility, documentation, age limits, and race-day conduct for the Kutchi Marathon.",
+      "Everything you need to know about eligibility, documentation, age limits, and race-day conduct for the Antra Kutchi Marathon.",
     sections: [
       {
         id: "race-rules",
@@ -543,9 +594,9 @@ const INFO_CONTENT = {
           "• Minimum ages: 12 yrs for 5 km, 15 yrs for 10 km, and 18 yrs for 21 km.",
           "• Dream Run participants can join the Fancy Dress Contest promoting a social cause; group prizes are collective and themes must be submitted 15 days prior.",
           "• The 1 km Mother Carrying Baby category celebrates bonding between parent and child.",
-          "• Registrations close on 30 Nov 2025 at 11:59 PM or earlier if slots fill up.",
+          "• Registrations close on 30 Nov 2026 at 11:59 PM or earlier if slots fill up.",
           "• Each participant may register for only one category.",
-          "• 21 km runners must upload a 10 km timing certificate from a race held on or after 1 Jan 2024 (deadline 31 Dec 2025) else the entry shifts to 10 km.",
+          "• 21 km runners must upload a 10 km timing certificate from a race held on or after 1 Jan 2025 (deadline 31 Dec 2026) else the entry shifts to 10 km.",
           "• Government ID proof is mandatory for age verification; age groups auto-select via date of birth.",
           "• Confirmation email and SMS will be sent after successful registration with further race-kit details on risers.in.",
           "• Race BIB and goodie bag must be collected in person at the designated centre within the announced window.",
@@ -560,7 +611,7 @@ const INFO_CONTENT = {
         ],
         paragraphsAfter: [
           "• BIBs are non-transferable; no refunds on cancellation and the BIB must be pinned at four corners on the front of the T-shirt.",
-          "• Timing certificates release on 16 Feb 2026 and final results go live by 5:00 PM the next day on www.risers.in.",
+          "• Timing certificates release on 16 Feb 2027 and final results go live by 5:00 PM the next day on www.risers.in.",
           "• Event organisers reserve rights to modify date, venue, distance, or schedule at any time; all participants must comply.",
         ],
       },

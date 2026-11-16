@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Risers – Committed to Fitness</title>
@@ -8,14 +9,18 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body id="top">
   <!-- HEADER / NAVBAR -->
   <header class="site-header">
     <div class="container nav-container">
       <a class="logo" href="index.html" aria-label="Risers home">
-        <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="140" height="52" />
+        <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="140"
+          height="52" />
       </a>
       <button class="mobile-nav-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
         <span class="sr-only">Open navigation</span>
@@ -45,9 +50,9 @@
               <span class="nav-label">Events</span>
             </a>
             <ul class="nav-submenu" aria-label="Events submenu">
+              <li><a href="kutchi-marathon.html">Antra Kutchi Marathon</a></li>
               <li><a href="swimming-championship.html">Swimming Championship</a></li>
               <li><a href="athletics-championship.html">Athletics Championship</a></li>
-              <li><a href="kutchi-marathon.html">Kutchi Marathon</a></li>
             </ul>
           </li>
           <li class="nav-item nav-item-has-children">
@@ -109,12 +114,12 @@
             <span class="mobile-label">Events</span>
           </a>
           <ul class="mobile-submenu" role="menu">
+            <li role="none"><a role="menuitem" href="kutchi-marathon.html">Antra Kutchi Marathon</a></li>
             <li role="none"><a role="menuitem" href="swimming-championship.html">Swimming Championship</a></li>
             <li role="none"><a role="menuitem" href="athletics-championship.html">Athletics Championship</a></li>
-            <li role="none"><a role="menuitem" href="kutchi-marathon.html">Kutchi Marathon</a></li>
           </ul>
         </li>
-        
+
         <li class="mobile-item mobile-item-has-children" role="none">
           <a role="menuitem" href="#community">
             <span class="mobile-index" aria-hidden="true">05.</span>
@@ -138,7 +143,7 @@
             <span class="mobile-label">Contact Us</span>
           </a>
         </li>
-         <li class="mobile-item" role="none">
+        <li class="mobile-item" role="none">
           <a role="menuitem" href="scores.html">
             <span class="mobile-index" aria-hidden="true">08.</span>
             <span class="mobile-label">Score Card</span>
@@ -156,9 +161,10 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-sponsor-logos">
-      <img src="2.webp" alt="Sponsor Logo 2" class="hero-sponsor-logo" />
+      <img src="assests/antara-marathon-2027.jpg" alt="Antara Kutchi Marathon 2027" class="hero-sponsor-logo"
+        style="border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 255, 255, 0.4);" />
     </div>
-    
+
     <!-- Route Image Modal -->
     <div class="route-modal" id="routeModal">
       <button class="route-close" id="routeClose">
@@ -169,38 +175,58 @@
       </button>
       <img id="routeImage" src="" alt="Marathon Route" />
     </div>
-    
+
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">Committed to Fitness</div>
           <h1>
-            The Biggest Fitness Event Of Kutchi Community Is Back<br />
+            Antra Kutchi Marathon 2027<br />
+            <span style="font-size:0.5em;font-weight:400;opacity:0.85;">Registrations Are Now Open!</span>
           </h1>
-          
-          <div class="hero-actions"> 
-            <a href="https://tinyurl.com/36n3bn2c" class="btn btn-ghost" target="_blank" rel="noopener">
-              Provisional Results →
-            </a>
-            <a href="https://new.splitsecondpix.com/events/kutchi-marathon-2026" class="btn btn-ghost" target="_blank" rel="noopener">
-              Event Photographs →
+
+          <!-- Registration Countdown Timer -->
+          <div class="hero-countdown" id="heroCountdown">
+            <div class="countdown-badge">
+              <span class="countdown-pulse-dot"></span>
+              <span>Registration Closes In</span>
+            </div>
+
+            <div class="countdown-digits">
+              <div class="countdown-box">
+                <span class="countdown-number" id="countDays">00</span>
+                <span class="countdown-unit">Days</span>
+              </div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countHours">00</span>
+                <span class="countdown-unit">Hours</span>
+              </div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countMins">00</span>
+                <span class="countdown-unit">Minutes</span>
+              </div>
+              <span class="countdown-sep">:</span>
+              <div class="countdown-box">
+                <span class="countdown-number" id="countSecs">00</span>
+                <span class="countdown-unit">Seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://events.risers.in" class="btn btn-primary" target="_blank" rel="noopener" style="
+              font-size:1.15rem; padding:1.05rem 2.8rem; 
+              background:linear-gradient(135deg,#ff7a00,#ff6b35);
+              border:none; border-radius:50px; color:#fff; font-weight:700;
+              box-shadow:0 10px 32px rgba(255,122,0,0.5);
+              transition:all 0.3s ease;
+            ">
+              Register Now →
             </a>
           </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number" data-count="5000" data-suffix="+" >0</span>
-              <span class="stat-label">Participants</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="15" data-suffix="+">0</span>
-              <span class="stat-label">Active Years</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="10" data-suffix="+">0</span>
-              <span class="stat-label">Cities</span>
-            </div>
-          </div>
-          
+
         </div>
       </div>
     </div>
@@ -213,7 +239,8 @@
         <p class="experience-eyebrow">Where Community, Discipline & Celebration Come Together</p>
         <h2>Why Thousands Choose to Rise With Us Every Year</h2>
         <p class="experience-subhead">
-          From first-time participants to seasoned athletes, RISERS delivers an experience rooted in safety, precision, culture, and unforgettable memories.
+          From first-time participants to seasoned athletes, RISERS delivers an experience rooted in safety, precision,
+          culture, and unforgettable memories.
           <strong>This is more than an event — it’s a community that moves together.</strong>
         </p>
       </div>
@@ -225,12 +252,14 @@
             <div class="experience-card-face experience-card-front">
               <div class="exp-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" role="img" aria-label="Shield">
-                  <path d="M16 3 5 7v7c0 8 5 13 11 15 6-2 11-7 11-15V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-                  <path d="M11 16.5 14.5 20 21 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M16 3 5 7v7c0 8 5 13 11 15 6-2 11-7 11-15V7z" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linejoin="round" />
+                  <path d="M11 16.5 14.5 20 21 12" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Safety You Can Trust</h3>
-  
+
             </div>
             <div class="experience-card-face experience-card-back">
               <p>A system built on discipline, medically-ready teams, and routes vetted down to the last meter.</p>
@@ -244,7 +273,8 @@
               <div class="exp-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" role="img" aria-label="Schedule">
                   <rect x="5" y="8" width="22" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
-                  <path d="M5 14h22M11 5v6M21 5v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M5 14h22M11 5v6M21 5v6" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Professionally Organised Events</h3>
@@ -262,11 +292,12 @@
                 <svg viewBox="0 0 32 32" role="img" aria-label="People">
                   <circle cx="10" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
                   <circle cx="22" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
-                  <path d="M4 25c0-3.3 2.7-6 6-6s6 2.7 6 6M16 25c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M4 25c0-3.3 2.7-6 6-6s6 2.7 6 6M16 25c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>A Community That Feels Like Family</h3>
-       
+
             </div>
             <div class="experience-card-face experience-card-back">
               <p>It’s an environment where support matters more than competition.</p>
@@ -330,7 +361,8 @@
           <p class="about-eyebrow">About Us</p>
           <h2>Built on Fitness.<br />Driven by Community. Inspired by You.</h2>
           <p>
-            Risers began with a simple idea, to make sports meaningful, accessible and joyful for everyone. What started small
+            Risers began with a simple idea, to make sports meaningful, accessible and joyful for everyone. What started
+            small
             has grown into a vibrant movement of swimmers, runners and families rising together.
           </p>
           <div class="about-highlights">
@@ -359,7 +391,7 @@
           <p>Choose your arena – water, track or the streets.</p>
         </div>
         <div class="events-lede-meta">
-          <span>2025 · 2026 Season</span>
+          <span>2026 · 2027 Season</span>
         </div>
       </div>
 
@@ -372,13 +404,16 @@
           <div class="event-body">
             <div class="event-header">
               <div>
-                <p class="event-kicker">Marathon • 2026</p>
-                <h3>KVO Kutchi Marathon</h3>
+                <p class="event-kicker">Marathon • 2027</p>
+                <h3>Antra Kutchi Marathon 2027</h3>
               </div>
-              <span class="event-chip event-chip-closed">Registrations Closed</span>
+              <span class="event-chip event-chip-open"
+                style="background:rgba(0,200,83,0.15);color:#00c853;border:1px solid rgba(0,200,83,0.3);">🟢
+                Registrations Open</span>
             </div>
             <p>
-              A unique marathon experience designed to challenge your stamina and bring runners together.
+              The biggest marathon of the Kutchi community is back! Challenge your stamina and rise together in Marathon
+              2027.
             </p>
 
             <div class="event-metadata">
@@ -388,43 +423,25 @@
               </div>
               <div class="meta-block">
                 <span class="meta-label">Race Day</span>
-                <time class="meta-value" datetime="2026-02-01">Feb 01, 2026</time>
+                <time class="meta-value" datetime="2027-01-31">Jan 31, 2027</time>
               </div>
             </div>
 
-            <div class="countdown countdown-pill" data-deadline="2026-02-01T05:00:00">
-              <span class="cd-label">Starts in</span>
+            <div class="countdown countdown-pill" data-deadline="2027-01-31T05:00:00">
+              <span class="cd-label">Race starts in</span>
               <span class="cd-time">00d : 00h : 00m</span>
             </div>
 
-            <div class="event-co-sponsors" aria-label="Marathon co-sponsors">
-              <span class="co-sponsor-label">Co-sponsors</span>
-              <div class="co-sponsor-logos">
-                <img src="assests/ramdev.webp" alt="Ramdev" />
-                <img src="assests/justintime.webp" alt="Just In Time" />
-              </div>
-            </div>
-
-            <div class="event-sponsor-loop" aria-label="Marathon partners">
-              <div class="event-sponsor-track">
-                <div class="event-sponsor-group">
-                  <img src="assests/sponser1.webp" alt="Amaryug" />
-                  <img src="assests/sponser2.webp" alt="Elley" />
-                  <img src="assests/sponser3.webp" alt="Food Planet" />
-                  <img src="assests/sponser4.webp" alt="Cult.fit" />
-                </div>
-                <div class="event-sponsor-group" aria-hidden="true">
-                  <img src="assests/sponser1.webp" alt="" />
-                  <img src="assests/sponser2.webp" alt="" />
-                  <img src="assests/sponser3.webp" alt="" />
-                  <img src="assests/sponser4.webp" alt="" />
-                </div>
-              </div>
+            <div class="event-partner-badge" aria-label="Powered by Antara">
+              <span class="partner-label">Powered by</span>
+              <img src="assests/antara-logo.png" alt="Antara Gold & Diamonds"
+                style="max-height: 48px; width: auto; object-fit: contain;" />
             </div>
 
             <div class="event-actions">
               <button class="btn btn-secondary read-more-btn" data-event="marathon">Read More</button>
-              <button class="btn btn-disabled" title="Registrations Closed">Registration Closed</button>
+              <a href="https://events.risers.in" class="btn btn-primary" target="_blank" rel="noopener"
+                style="background:linear-gradient(135deg,#ff7a00,#ff6b35);border:none;color:#fff;">Register Now →</a>
             </div>
           </div>
         </article>
@@ -437,13 +454,16 @@
           <div class="event-body">
             <div class="event-header">
               <div>
-                <p class="event-kicker">Swimming • Event</p>
-                <h3>Jalthal 2025</h3>
+                <p class="event-kicker">Swimming • 2027</p>
+                <h3>Jalthal 2027</h3>
               </div>
-              <span class="event-chip event-chip-closed">Registrations Closed</span>
+              <span class="event-chip event-chip-open"
+                style="background:rgba(255,140,0,0.15);color:#ff9436;border:1px solid rgba(255,140,0,0.3);">Date To Be
+                Announced</span>
             </div>
             <p>
-              Cut through the water with calm technique, steady breathing, and race-day confidence built by our safety-first crew.
+              Cut through the water with calm technique, steady breathing, and race-day confidence built by our
+              safety-first crew.
             </p>
 
             <div class="event-metadata">
@@ -453,23 +473,20 @@
               </div>
               <div class="meta-block">
                 <span class="meta-label">Swimming Day</span>
-                <time class="meta-value" datetime="2025-12-21">Dec 21, 2025</time>
+                <time class="meta-value">Date To Be Announced</time>
               </div>
             </div>
 
-            <div class="countdown countdown-pill" data-deadline="2025-12-21T08:00:00">
-              <span class="cd-label">Starts in</span>
-              <span class="cd-time">00d : 00h : 00m</span>
+            <div class="countdown countdown-pill">
+              <span class="cd-label">Status</span>
+              <span class="cd-time">Date To Be Announced</span>
             </div>
 
-            <div class="event-partner-badge" aria-label="Powered by Navneet">
-              <span class="partner-label">Powered by</span>
-              <img src="assests/navneet.webp" alt="Navneet sponsor" />
-            </div>
+
 
             <div class="event-actions">
               <button class="btn btn-secondary read-more-btn" data-event="swimming">Read More</button>
-              <button class="btn btn-disabled" title="Registrations Closed">Registration Closed</button>
+              <button class="btn btn-disabled" style="cursor:default;" title="Date To Be Announced">Coming Soon</button>
             </div>
           </div>
         </article>
@@ -478,18 +495,21 @@
         <article class="event-card feature-card" id="athletics-championship">
           <div class="event-media">
             <img src="assests/Athelatic.webp" alt="Athletics Event" />
-            
+
           </div>
           <div class="event-body">
             <div class="event-header">
               <div>
-                <p class="event-kicker">Athletics • Event</p>
-                <h3>Jalthal 2025</h3>
+                <p class="event-kicker">Athletics • 2027</p>
+                <h3>Jalthal 2027</h3>
               </div>
-              <span class="event-chip event-chip-closed">Registrations Closed</span>
+              <span class="event-chip event-chip-open"
+                style="background:rgba(255,140,0,0.15);color:#ff9436;border:1px solid rgba(255,140,0,0.3);">Date To Be
+                Announced</span>
             </div>
             <p>
-              Launch off the blocks, own every stride, and chase a personal best on a fast, professionally set track with elite mentors.
+              Launch off the blocks, own every stride, and chase a personal best on a fast, professionally set track
+              with elite mentors.
             </p>
 
             <div class="event-metadata">
@@ -499,23 +519,20 @@
               </div>
               <div class="meta-block">
                 <span class="meta-label">Athletics Days</span>
-                <time class="meta-value" datetime="2025-12-27">Dec 27 – 28, 2025</time>
+                <time class="meta-value">Date To Be Announced</time>
               </div>
             </div>
 
-            <div class="countdown countdown-pill" data-deadline="2025-12-27T06:00:00">
-              <span class="cd-label">Starts in</span>
-              <span class="cd-time">00d : 00h : 00m</span>
+            <div class="countdown countdown-pill">
+              <span class="cd-label">Status</span>
+              <span class="cd-time">Date To Be Announced</span>
             </div>
 
-            <div class="event-partner-badge" aria-label="Powered by Navneet">
-              <span class="partner-label">Powered by</span>
-              <img src="assests/navneet.webp" alt="Navneet sponsor" />
-            </div>
+
 
             <div class="event-actions">
               <button class="btn btn-secondary read-more-btn" data-event="athletics">Read More</button>
-              <button class="btn btn-disabled" title="Registrations Closed">Registration Closed</button>
+              <button class="btn btn-disabled" style="cursor:default;" title="Date To Be Announced">Coming Soon</button>
             </div>
           </div>
         </article>
@@ -530,7 +547,7 @@
         <p class="stories-eyebrow">What Our Community Says</p>
         <h2>What Our Community Says</h2>
         <p>
-          Members of the Risers community share how their journeys shaped their mindset, habits, 
+          Members of the Risers community share how their journeys shaped their mindset, habits,
           and belief. These testimonials reflect the heart of what we stand for.
         </p>
       </div>
@@ -539,7 +556,8 @@
         <article class="story-card story-card-highlight">
           <figure class="story-media">
             <img src="assests/testimonials/1.webp" alt="ANIL GALA testimonial thumbnail" loading="lazy" />
-            <button class="story-play" aria-label="Play Swim Family testimonial" data-video="assests/testimonials/test 1.mp4">
+            <button class="story-play" aria-label="Play Swim Family testimonial"
+              data-video="assests/testimonials/test 1.mp4">
               ▶
             </button>
           </figure>
@@ -552,7 +570,8 @@
         <article class="story-card story-card-highlight">
           <figure class="story-media">
             <img src="assests/testimonials/2.webp" alt="CA Atul Bheda testimonial thumbnail" loading="lazy" />
-            <button class="story-play" aria-label="Play Swim Family testimonial" data-video="assests/testimonials/test 2.mp4">
+            <button class="story-play" aria-label="Play Swim Family testimonial"
+              data-video="assests/testimonials/test 2.mp4">
               ▶
             </button>
           </figure>
@@ -564,7 +583,8 @@
         <article class="story-card story-card-highlight">
           <figure class="story-media">
             <img src="assests/testimonials/3.webp" alt="Well Wisher testimonial thumbnail" loading="lazy" />
-            <button class="story-play" aria-label="Play Swim Family testimonial" data-video="assests/testimonials/test 3.mp4">
+            <button class="story-play" aria-label="Play Swim Family testimonial"
+              data-video="assests/testimonials/test 3.mp4">
               ▶
             </button>
           </figure>
@@ -591,7 +611,8 @@
         <p class="stories-eyebrow sponsor-eyebrow">SPONSORSHIP OPPORTUNITY</p>
         <h2>Partner With a Growing Movement.</h2>
         <p>
-          Risers attracts thousands of participants and lakhs of eyeballs, giving brands powerful visibility, authentic engagement, and purpose-driven impact.
+          Risers attracts thousands of participants and lakhs of eyeballs, giving brands powerful visibility, authentic
+          engagement, and purpose-driven impact.
         </p>
         <ul class="sponsor-benefits">
           <li>
@@ -655,13 +676,15 @@
       <button class="story-video-close" aria-label="Close testimonial video">×</button>
       <div class="story-video-frame">
         <video class="story-video-file" controls playsinline preload="metadata"></video>
-        <iframe class="story-video-embed" src="" title="Testimonial video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe class="story-video-embed" src="" title="Testimonial video" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <!-- Floating Instagram button -->
-  <a class="floating-ig" href="https://www.instagram.com/risersmumbai" target="_blank" rel="noopener" aria-label="Visit RISERS on Instagram">
+  <a class="floating-ig" href="https://www.instagram.com/risersmumbai" target="_blank" rel="noopener"
+    aria-label="Visit RISERS on Instagram">
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <rect x="4" y="4" width="16" height="16" rx="4.5" ry="4.5"></rect>
       <circle cx="12" cy="12" r="4"></circle>
@@ -679,7 +702,8 @@
       </div>
 
       <div class="past-scroll">
-        <a class="video-card" href="https://youtu.be/6caZS0xUzlE?si=kHt23j50RBrz9u-G" target="_blank" rel="noopener noreferrer">
+        <a class="video-card" href="https://youtu.be/6caZS0xUzlE?si=kHt23j50RBrz9u-G" target="_blank"
+          rel="noopener noreferrer">
           <div class="video-thumb">
             <img src="assests/past.webp" alt="Ladakh High Altitude Run video" />
             <span class="video-chip">YouTube</span>
@@ -693,7 +717,8 @@
           </div>
         </a>
 
-        <a class="video-card" href="https://youtu.be/nWJ1J6K-02A?si=eaIsBd85Tj-KxIY7" target="_blank" rel="noopener noreferrer">
+        <a class="video-card" href="https://youtu.be/nWJ1J6K-02A?si=eaIsBd85Tj-KxIY7" target="_blank"
+          rel="noopener noreferrer">
           <div class="video-thumb">
             <img src="assests/past2.webp" alt="Risers Beach Marathon video" />
             <span class="video-chip">YouTube</span>
@@ -707,7 +732,8 @@
           </div>
         </a>
 
-        <a class="video-card" href="https://youtu.be/62tlAOOp7ws?si=k90sHvS_L5fVTkUD" target="_blank" rel="noopener noreferrer">
+        <a class="video-card" href="https://youtu.be/62tlAOOp7ws?si=k90sHvS_L5fVTkUD" target="_blank"
+          rel="noopener noreferrer">
           <div class="video-thumb">
             <img src="assests/past3.webp" alt="Night City Run Challenge video" />
             <span class="video-chip">YouTube</span>
@@ -721,7 +747,8 @@
           </div>
         </a>
 
-        <a class="video-card" href="https://youtu.be/ipq5pX4ukGU?si=ufl6-CyHmlcunBoV" target="_blank" rel="noopener noreferrer">
+        <a class="video-card" href="https://youtu.be/ipq5pX4ukGU?si=ufl6-CyHmlcunBoV" target="_blank"
+          rel="noopener noreferrer">
           <div class="video-thumb">
             <img src="assests/past4.webp" alt="Risers Multi-Sport Fest video" />
             <span class="video-chip">YouTube</span>
@@ -737,8 +764,7 @@
       </div>
 
       <div class="center">
-        <a href="https://www.youtube.com/@therisers5251" target="_blank"
-          class="btn btn-ghost">View Full Playlist</a>
+        <a href="https://www.youtube.com/@therisers5251" target="_blank" class="btn btn-ghost">View Full Playlist</a>
       </div>
     </div>
   </section>
@@ -750,7 +776,8 @@
     <div class="contact-orb contact-orb-2"></div>
     <div class="contact-aurora"></div>
     <div class="container contact-shell">
-      <form class="contact-panel contact-panel-form" id="contactForm" action="https://formspree.io/f/mwpgdlrd" method="POST" enctype="multipart/form-data">
+      <form class="contact-panel contact-panel-form" id="contactForm" action="https://formspree.io/f/mwpgdlrd"
+        method="POST" enctype="multipart/form-data">
         <div class="form-head">
           <h3>Drop us a signal</h3>
           <p>Share the essentials and we’ll wire back a playbook.</p>
@@ -782,7 +809,8 @@
         </div>
         <div class="field">
           <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="4" placeholder="Give us vibe, numbers, cities, timelines…" required></textarea>
+          <textarea id="contact-message" name="message" rows="4" placeholder="Give us vibe, numbers, cities, timelines…"
+            required></textarea>
         </div>
         <div class="form-row">
           <label class="checkbox-label">
@@ -803,7 +831,8 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="logo footer-logo" href="index.html" aria-label="Risers home">
-          <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="150" height="56" />
+          <img src="assests/Riser_Logo.Pdf_-_1-removebg-preview.webp" alt="Risers logo" class="logo-img" width="150"
+            height="56" />
         </a>
         <p>
           We design cinematic endurance stories — from sea-level night runs to snow-packed relay domes.
@@ -830,12 +859,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="year"></span> RISERS</p>
+      <p>© <span id="year"></span> RISERS SPORTS CLUB AND FITNESS FOUNDATION</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/risers" target="_blank" rel="noopener noreferrer">
           <span class="sr-only">Instagram</span>
           <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
+            <path
+              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z" />
             <circle cx="12" cy="12" r="3.2" />
             <circle cx="16.8" cy="7.2" r="0.9" />
           </svg>
@@ -843,13 +873,15 @@
         <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
           <span class="sr-only">YouTube</span>
           <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18 5 12 5 12 5s-6 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8l4.8 3.2z" />
+            <path
+              d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18 5 12 5 12 5s-6 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8A26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8l4.8 3.2z" />
           </svg>
         </a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
           <span class="sr-only">LinkedIn</span>
           <svg class="social-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
-            <path d="M4.98 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM3 8.8h3.96V21H3zM9.75 8.8H13v1.7h.05a3.53 3.53 0 0 1 3.2-1.76c3.42 0 4.05 2.24 4.05 5.15V21h-3.96v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21H9.75z" />
+            <path
+              d="M4.98 3.5a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6zM3 8.8h3.96V21H3zM9.75 8.8H13v1.7h.05a3.53 3.53 0 0 1 3.2-1.76c3.42 0 4.05 2.24 4.05 5.15V21h-3.96v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21H9.75z" />
           </svg>
         </a>
       </div>
@@ -869,7 +901,7 @@
       <div class="modal-body">
         <div class="modal-toolbar">
           <div class="modal-tabs" id="modalTabs" role="tablist" aria-label="Event intel sections"></div>
-          
+
         </div>
         <div class="modal-scroll-shell" id="modalScrollShell">
           <div class="modal-panes" id="modalPanes"></div>
@@ -883,4 +915,5 @@
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 </body>
+
 </html>
